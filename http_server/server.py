@@ -22,16 +22,16 @@ def getDataFromDB():
         """)
 
         flat_records = dbHandle.fetchall()
+        strTable = "<html><head><meta charset=\"UTF-8\"><style>table {font-family: Arial, sans-serif; border-collapse: collapse; width: 100%;} th, td {border: 1px solid #ddd; padding: 8px; text-align: center; vertical-align: middle;} th {background-color: #f2f2f2;} tr:nth-child(even) {background-color: #f9f9f9;} tr:hover {background-color: #f5f5f5;}</style></head><body><table><tr><th>#</th><th>Flats</th><th>Image</th></tr>"
+        for i, row in enumerate(flat_records, start=1):
+            strRW = "<tr><td>" + str(i) + "</td><td>" + str(row[1]) + "</td><td><img src=\"" + str(row[2]) + "\" style=\"max-width: 200px; display: block; margin-left: auto; margin-right: auto;\"></td></tr>"
+            strTable = strTable + strRW
 
-        strTable = "<html><meta charset=\"UTF-8\"><table><tr><th>Flats</th><th> </th></tr>"
-        for row in flat_records:
-            strRW = "<tr><td>"+row[1]+ "</td><td><img src=\""+row[2]+"\"></td></tr>"
-            strTable = strTable+strRW
-        
-        strTable = strTable+"</table></html>"
+        strTable = strTable + "</table></body></html>"
         hs = open("./srealityFlats.html", 'w')
         hs.write(strTable)
         hs.close()
+
     except Exception as e:
         cnt += 1
         hs = open("./srealityFlats.html", 'w')
