@@ -1,0 +1,6 @@
+cryptography==41.0.5
+scrapy==2.11.1
+scrapy-splash==0.8.0
+psycopg2-binary==2.9.3
+psycopg2==2.9.5
+pyOpenSSL==24.0.0
