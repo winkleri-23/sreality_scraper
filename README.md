@@ -30,7 +30,6 @@ The solution is dockerized and can be run with a single command `docker-compose 
     └── srealityScraper
 
 
-
 ## Sources
 - Scrapy documentation: https://docs.scrapy.org/en/latest/
 - Sreality Rest API documentation: https://dspace.cvut.cz/bitstream/handle/10467/103384/F8-BP-2021-Malach-Ondrej-thesis.pdf?sequence=-1&isAllowed=y
