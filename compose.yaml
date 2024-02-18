@@ -1,14 +1,9 @@
 version: '3.9'
 services:
-  http_server:
-    build: ./http_server
-    ports:
-      - 8080:8080
-
+ 
   database:
     image: postgres:latest
     container_name: sreality_db
-    restart: always
     environment:
       - POSTGRES_DB=sreality
       - POSTGRES_USER=test
@@ -16,5 +11,20 @@ services:
     ports:
       - 5432:5432
 
-    
-    
+  scrapy:
+    build: ./srealityScraper
+    ports:
+      - 8000:5000
+    depends_on:
+      - database
+
+  http_server:
+    build: ./http_server
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+      - scrapy
+
+volumes:
+  shared-volume:
