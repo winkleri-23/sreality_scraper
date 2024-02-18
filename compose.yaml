@@ -4,3 +4,17 @@ services:
     build: ./http_server
     ports:
       - 8080:8080
+
+  database:
+    image: postgres:latest
+    container_name: sreality_db
+    restart: always
+    environment:
+      - POSTGRES_DB=sreality
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+    ports:
+      - 5432:5432
+
+    
+    
