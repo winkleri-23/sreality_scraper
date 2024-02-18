@@ -15,6 +15,8 @@ The solution is dockerized and can be run with a single command `docker-compose 
 
 ## Directory structure
 
+The project is organized as follows:
+```
 .
 ├── README.md
 ├── compose.yaml
@@ -28,7 +30,7 @@ The solution is dockerized and can be run with a single command `docker-compose 
     ├── requirements.txt
     ├── scrapy.cfg
     └── srealityScraper
-
+```
 
 ## Sources
 - Scrapy documentation: https://docs.scrapy.org/en/latest/
