@@ -24,7 +24,6 @@ The project is organized as follows:
 │   ├── Dockerfile
 │   ├── requirements.txt
 │   ├── server.py
-│   └── srealityFlats.html
 └── srealityScraper
     ├── Dockerfile
     ├── requirements.txt
@@ -32,6 +31,13 @@ The project is organized as follows:
     └── srealityScraper
 ```
 
+- `compose.yaml` - docker-compose file that defines the services to be run
+- `http_server` - directory containing the simple HTTP server
+- `srealityScraper` - directory containing the Scrapy spider
+    - important files:
+        - `Dockerfile` - Dockerfile for the Scrapy spider
+        - `srealityScraper/spiders/flat.py` - Scrapy spider that scrapes the sreality.cz website
+        - `srealityScraper/pipeline.py` - Scrapy pipeline that saves the scraped items to the Postgresql database
 ## Sources
 - Scrapy documentation: https://docs.scrapy.org/en/latest/
 - Sreality Rest API documentation: https://dspace.cvut.cz/bitstream/handle/10467/103384/F8-BP-2021-Malach-Ondrej-thesis.pdf?sequence=-1&isAllowed=y
