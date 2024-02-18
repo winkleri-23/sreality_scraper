@@ -13,11 +13,24 @@ The solution consists of three parts:
 
 The solution is dockerized and can be run with a single command `docker-compose up` in the root directory of the project. The scraped items can be viewed on the http://127..0.0.1:8080 page as requested in the assignment.
 
+## Directory structure
 
-
+.
+├── README.md
+├── compose.yaml
+├── http_server
+│   ├── Dockerfile
+│   ├── requirements.txt
+│   ├── server.py
+│   └── srealityFlats.html
+└── srealityScraper
+    ├── Dockerfile
+    ├── requirements.txt
+    ├── scrapy.cfg
+    └── srealityScraper
 
 
 
 ## Sources
 - Scrapy documentation: https://docs.scrapy.org/en/latest/
-Sreality Rest API documentation: https://dspace.cvut.cz/bitstream/handle/10467/103384/F8-BP-2021-Malach-Ondrej-thesis.pdf?sequence=-1&isAllowed=y
+- Sreality Rest API documentation: https://dspace.cvut.cz/bitstream/handle/10467/103384/F8-BP-2021-Malach-Ondrej-thesis.pdf?sequence=-1&isAllowed=y
